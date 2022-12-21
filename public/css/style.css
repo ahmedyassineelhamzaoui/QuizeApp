@@ -1,1 +1,93 @@
-/*# sourceMappingURL=style.css.map */
+.body-content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.body-content .progress-empty {
+  background-color: #C7FFED;
+  border-radius: 10px;
+  height: 4px;
+  width: 60%;
+  margin-left: 20%;
+  position: relative;
+  top: 20.5px;
+  z-index: 0;
+}
+.body-content .progress-empty .progress-full {
+  width: 0%;
+  height: 100%;
+  background-color: green;
+  transition: 0.5s;
+}
+.body-content .cercles-steper {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-left: 20%;
+  width: 60%;
+}
+.body-content .cercles-steper .cercle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #015958;
+  background-color: #C7FFED;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body-content .container-btn {
+  display: flex;
+  justify-content: space-evenly;
+}
+.body-content .container-btn .btn-go, .body-content .container-btn .btn-previous, .body-content .container-btn .btn-next {
+  border-radius: 5px;
+  width: 150px;
+  padding: 3px 0;
+  font-weight: bold;
+  text-align: center;
+}
+.body-content .container-btn .btn-next {
+  background-color: #008F8C;
+}
+.body-content .container-btn .btn-next:hover {
+  background-color: #057674;
+}
+.body-content .container-btn .btn-previous {
+  background-color: #D8FFDB;
+}
+.body-content .container-btn .btn-previous:hover {
+  background-color: #c4e4c6;
+}
+.body-content .container-btn .btn-go {
+  background-color: rgb(236, 204, 0);
+}
+.body-content .quiz-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.body-content .quiz-logo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.body-content .content {
+  margin-top: -50px;
+}
+.body-content .content .condition-block {
+  text-align: center;
+  display: none;
+  width: 70%;
+}
+.body-content .content .condition-block .condition-terms {
+  margin-bottom: 40px;
+  color: gray;
+}
+.body-content .content .active {
+  display: block;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,99 @@
+.body-content{
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    .progress-empty{
+        background-color: #C7FFED;
+        border-radius: 10px;
+        height: 4px;
+        width:60%;
+        margin-left: 20%;
+        position: relative;
+        top:20.5px;
+        z-index: 0;
+        .progress-full{
+            width: 0%;
+            height: 100%;
+            background-color:green ;
+            transition: .5s;
+        }
+    }
+    .cercles-steper{
+        z-index:1;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        margin-left: 20%;
+        width:60%;
+        .cercle{
+            width:40px;
+            height:40px;
+            border-radius: 50%;
+            border: 2px solid #015958;
+            background-color: #C7FFED;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+       
+    }
+    .container-btn {
+        display:flex;
+        justify-content: space-evenly;
+        %btn {
+            border-radius: 5px;
+            width: 150px;
+            padding:3px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+        .btn-next{
+            @extend %btn;
+            background-color:#008F8C ;
+            &:hover{
+               background-color:#057674 ;
+            }
+        }
+        .btn-previous{
+            @extend %btn;
+            background-color:#D8FFDB ;
+            &:hover{
+               background-color:#c4e4c6 ;
+            }
+        }
+        .btn-go{
+            @extend %btn;
+            background-color: rgb(236, 204, 0);
+        }
+    }
+    .quiz-logo{
+        display:flex;
+        justify-content: center;
+        margin-bottom: 80px;
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+    }
+    .content {
+        margin-top: -50px;
+        .condition-block {
+            text-align: center;
+            display: none;
+            width: 70%;
+            .condition-terms {
+                margin-bottom: 40px;
+                color: gray;
+            }
+        }
+    
+        .active {
+            display: block;
+        }
+    }
+}
+
