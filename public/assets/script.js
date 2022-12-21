@@ -80,7 +80,8 @@ while(x--){
     tab1.push(tab[y]);
     tab.splice(y,1);
 }
-
+// the progress bar
+let incrementRange=document.querySelector(".increment-range");
 let index=0;
 function Getdata()
 {
@@ -92,10 +93,14 @@ function Getdata()
         let numberOfquestion=quizeObject.length;
         showdata(quizeObject[tab1[index]],numberOfquestion);
         Countdown(20,numberOfquestion);
+        incrementRange.style.width=`${(index+1)*10}%`;
         nextQuestion.onclick=()=>{
             index++;
             clearInterval(counInterval);
             Countdown(20,numberOfquestion);
+            if(index<numberOfquestion){
+                incrementRange.style.width=`${(index+1)*10}%`;
+            }
             if(index==numberOfquestion-1){
                 nextQuestion.style.display="none";
                 btnNext.style.visibility="visible";
