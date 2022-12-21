@@ -43,13 +43,17 @@
 .body-content .container-btn {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 20px;
 }
-.body-content .container-btn .btn-go, .body-content .container-btn .btn-previous, .body-content .container-btn .btn-next {
+.body-content .container-btn .btn-go, .body-content .container-btn .btn-previous, .body-content .container-btn .btn-next, .body-content .container-btn .next-question {
   border-radius: 5px;
   width: 150px;
   padding: 3px 0;
   font-weight: bold;
   text-align: center;
+}
+.body-content .container-btn .next-question {
+  background-color: pink;
 }
 .body-content .container-btn .btn-next {
   background-color: #008F8C;
@@ -82,7 +86,29 @@
 .body-content .content .condition-block {
   text-align: center;
   display: none;
-  width: 70%;
+  width: 100%;
+  border: 2px solid black;
+}
+.body-content .content .condition-block .answers {
+  width: 300px;
+  height: 150px;
+  position: relative;
+}
+.body-content .content .condition-block .answers .radio-question {
+  position: absolute;
+  accent-color: blue;
+  top: 2%;
+  left: 2%;
+  width: 20px;
+  height: 20px;
+}
+.body-content .content .condition-block .answers .check-question {
+  position: absolute;
+  accent-color: blue;
+  top: 2%;
+  left: 2%;
+  width: 20px;
+  height: 20px;
 }
 .body-content .content .condition-block .condition-terms {
   margin-bottom: 40px;

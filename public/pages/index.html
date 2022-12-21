@@ -17,41 +17,86 @@
             <div class="progress-full"></div>
         </div>
         <div class="cercles-steper">
-           <span class="cercle">1</span>
-           <span class="cercle">2</span>
-           <span class="cercle">3</span>
+            <span class="cercle">1</span>
+            <span class="cercle">2</span>
+            <span class="cercle">3</span>
         </div>
         <div class="quiz-logo">
-            <img src="../images/questions-186_256.gif" alt="">
+            <img id="image" src="../images/questions-186_256.gif" alt="">
         </div>
         <div class="content flex justify-center items-center ">
 
-            <div  class="condition-block">
+            <div class="condition-block">
                 <h1 class="condition-terms">The quiz consists of 10 questions that you have to answer
-                    One point for each questioncThe question may contain more than one answer, so be careful in choosing<br>
+                    One point for each questioncThe question may contain more than one answer, so be careful in
+                    choosing<br>
                     PRIVACY: Participants agree that personal data submitted with an entry,
-                        including name, mailing address, phone number, and email address may be collected, processed, stored
-                        and otherwise used by The Bridge, its affiliates and the consultants for the purposes of conducting
-                        and administering the Quiz. By entering the Quiz, Participants agree to the transmission,
-                        processing, disclosing and storage of this personal data by The Bridge, its affiliates and the
-                        consultants. </h1>
+                    including name, mailing address, phone number, and email address may be collected, processed, stored
+                    and otherwise used by The Bridge, its affiliates and the consultants for the purposes of conducting
+                    and administering the Quiz. By entering the Quiz, Participants agree to the transmission,
+                    processing, disclosing and storage of this personal data by The Bridge, its affiliates and the
+                    consultants. </h1>
             </div>
-            <div  class="condition-block">
-               
+            <div class="condition-block ">
+           
+                <div class="flex justify-center items-center w-full">
+                    <div class="inside-cercle w-24 h-24  rounded-full"></div>
+                    <div
+                        class="flex items-center justify-center text-white absolute bg-black rounded-full w-20 h-20">
+                        <p id="date-crono"></p>
+                    </div>
+                </div>
+                <div class="w-full  grid  lg:grid-cols-4  md:grid-cols-2 md:justify-items-center sm:grid-cols-1 justify-items-center  ">
+                    <label
+                        class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-purple-300  rounded-lg shadow-md hover:bg-purple-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <h5 id="Answear-a" class=" mb-2 text-center text-xl font-bold  text-gray-900 dark:text-white">
+                        </h5>
+                        <input class="radio-question" type="radio" name="radio">
+                        <!-- <input class="check-question" type="checkbox" name="" id="Answear-a"> -->
+                    </label>
+                    <label
+                        class="answers flex items-center justify-center cursor-pointer my-2 mx-2 max-w-sm p-6 bg-violet-200  rounded-lg shadow-md hover:bg-violet-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 ">
+                        <h5 id="Answear-b" class=" mb-2 text-center text-xl font-bold  text-gray-900 dark:text-white">
+                        </h5>
+                        <input class="radio-question" type="radio" name="radio">
+                        <!-- <input class="check-question" type="checkbox" name="" id="Answear-b"> -->
+
+                    </label>
+                    <label
+                        class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-blue-200  rounded-lg shadow-md hover:bg-blue-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <h5 id="Answear-c" class=" mb-2 text-center text-xl font-bold  text-gray-900 dark:text-white">
+                        </h5>
+                        <input class="radio-question" type="radio" name="radio">
+                        <!-- <input class="check-question" type="checkbox" name="" id="Answear-c"> -->
+
+                    </label>
+                    <label
+                        class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-pink-100  rounded-lg shadow-md hover:bg-pink-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" >
+                        <h5 id="Answear-d" class="mb-2 text-xl font-bold text-gray-900 dark:text-white">
+                        </h5>
+                        <input class="radio-question" type="radio" name="radio">
+                        <!-- <input class="check-question" type="checkbox" name="" id="Answear-d"> -->
+
+                    </label>
+                </div>
+
+
             </div>
-            <div  class="condition-block">
-                <p class="condition-terms mb-3">After validation, you will access the results page where your total will be calculated and the wrong answers explained.
+            <div class="condition-block">
+                <p class="condition-terms mb-3">After validation, you will access the results page where your total will
+                    be calculated and the wrong answers explained.
                     Good luck !
-                    </p>
+                </p>
             </div>
 
         </div>
         <div class="container-btn">
+            <button class="next-question">Next Question</button>
             <button class="btn-previous">Previous</button>
             <button class="btn-next">Next</button>
-            <a href="game.html" class="btn-go">Let's Go..</a>
         </div>
     </div>
+    <!-- <script src="../assets/question.js"></script> -->
     <script src="../assets/script.js"></script>
 </body>
 
