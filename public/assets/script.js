@@ -90,6 +90,7 @@ function Getdata()
         let quizeObject = JSON.parse(this.responseText);
         let numberOfquestion=quizeObject.length;
         showdata(quizeObject[tab1[index]],numberOfquestion);
+        Countdown(20,numberOfquestion);
         nextQuestion.onclick=()=>{
             index++;
             if(index==numberOfquestion-1){
@@ -105,11 +106,32 @@ function Getdata()
    mydata.send();
 }
 Getdata();
+let radioQuestion=document.querySelectorAll(".radio-question");
+   
+let checkQuestion=document.querySelectorAll(".check-question");
+for(let i=0;i<4;i++){
+    checkQuestion[i].style.display="none";
+}
+
+
 function showdata(obj,allquestions){
     let answearA=document.querySelector("#Answear-a");
     let answearB=document.querySelector("#Answear-b");
     let answearC=document.querySelector("#Answear-c");
     let answearD=document.querySelector("#Answear-d");
+
+  
+    if(index==1 || index==6  || index==8){
+        for(let i=0;i<4;i++){
+            radioQuestion[i].style.display="none";
+            checkQuestion[i].style.display="block";
+        }
+    }else{
+        for(let i=0;i<4;i++){
+            radioQuestion[i].style.display="block";
+            checkQuestion[i].style.display="none";
+        }
+    }
     if(index<allquestions){
         answearA.innerHTML=obj['RéponseA'];
         answearB.innerHTML=obj['RéponseB'];
@@ -120,4 +142,31 @@ function showdata(obj,allquestions){
 
 function Countdown(timeing,allquestions){
     let  insidecircle=document.querySelector(".inside-cercle");
+    let dateCrono=document.querySelector("#date-crono");
+    if(index<allquestions){
+        counInterval=setInterval(function(){
+            if(timeing<10){
+            dateCrono.innerHTML=`0${timeing}`;
+
+            }else{
+                dateCrono.innerHTML=timeing;
+            }
+           if(timeing>=4 && timeing<6){
+            insidecircle.style.background=`conic-gradient(orange ${timeing * 18}deg,#dedede 0)`;
+           }else if(timeing<4){
+            insidecircle.style.background=`conic-gradient(red ${timeing * 18}deg,#dedede 0)`;
+           }else{
+            insidecircle.style.background=`conic-gradient(green ${timeing * 18}deg,#dedede 0)`;
+           }
+
+           timeing--;
+           if(timeing<0){
+            clearInterval(counInterval);
+           }
+
+
+        },1000)
+    }
+    
+
 }
