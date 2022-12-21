@@ -25,6 +25,7 @@ btnNext.onclick=()=>{
         btnNext.style.display="none";
     }
     if(compt==1){
+        Getdata();
         nextQuestion.style.display="block";
         btnNext.style.visibility="hidden";
     }
@@ -93,6 +94,8 @@ function Getdata()
         Countdown(20,numberOfquestion);
         nextQuestion.onclick=()=>{
             index++;
+            clearInterval(counInterval);
+            Countdown(20,numberOfquestion);
             if(index==numberOfquestion-1){
                 nextQuestion.style.display="none";
                 btnNext.style.visibility="visible";
@@ -105,7 +108,6 @@ function Getdata()
    mydata.open('GET',"../assets/data.json",true);
    mydata.send();
 }
-Getdata();
 let radioQuestion=document.querySelectorAll(".radio-question");
    
 let checkQuestion=document.querySelectorAll(".check-question");
@@ -158,10 +160,10 @@ function Countdown(timeing,allquestions){
            }else{
             insidecircle.style.background=`conic-gradient(green ${timeing * 18}deg,#dedede 0)`;
            }
-
            timeing--;
            if(timeing<0){
             clearInterval(counInterval);
+            nextQuestion.click();
            }
 
 
