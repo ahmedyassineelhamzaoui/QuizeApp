@@ -7,12 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
 <body>
     <div class="body-content">
+        <audio  id="audioSource" src="../images/audio.mp3"></audio>
+        <i class="fa fa-play" aria-hidden="true" id="play-audio"></i>
+        <style>
+             #myAudio {
+                display: none;
+            }
+        </style>
         <div class="steper-componnet">
             <div class="progress-empty">
                 <div class="progress-full"></div>
@@ -24,83 +32,79 @@
             </div>
         </div>
         <div class="quiz-logo">
-            <img id="image" src="../images/questions-186_256.gif" alt="">
+            <img id="image" src="../images/download-removebg-preview.png" alt="">
         </div>
         <div class="content flex justify-center items-center ">
 
             <div class="condition-block isuss">
-                <h1 class="condition-terms">The quiz consists of 10 questions that you have to answer
-                    One point for each questioncThe question may contain more than one answer, so be careful in
-                    choosing<br>
-                    PRIVACY: Participants agree that personal data submitted with an entry,
-                    including name, mailing address, phone number, and email address may be collected, processed, stored
-                    and otherwise used by The Bridge, its affiliates and the consultants for the purposes of conducting
-                    and administering the Quiz. By entering the Quiz, Participants agree to the transmission,
-                    processing, disclosing and storage of this personal data by The Bridge, its affiliates and the
-                    consultants. </h1>
+                <div class="condition-terms w-full mb-4 p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-70 h-42">
+                    <h3 class="font-mono flex items-center"><i class="fa-solid fa-clipboard-check text-sky-900 mb-2 mr-2"></i><span class="mb-2"> The test consists of 10 questions, each answer earning one point</span></h3>
+                    <h3 class="font-mono flex items-center"><i class="fa-solid fa-clipboard-check text-sky-900 mb-2 mr-2"></i><span class="mb-2"> To move on to the next question, you must answer one of the answers</span></h3>
+                    <h3 class="font-mono flex "><i class="fa-solid fa-clipboard-check text-sky-900 mt-1 mr-2"></i><span class="mb-2"> If you do not choose one of the answers and time passes, the answer is <br>considered wrong and you move directly to the next question</span></h3>
+                </div>
             </div>
             <div class="condition-block Questions">
                 <div class="container">
                     <div class="flex justify-center items-center w-full">
                         <div class="inside-cercle w-24 h-24  rounded-full"></div>
                         <div
-                            class="flex items-center justify-center text-white absolute bg-black rounded-full w-20 h-20">
-                            <p class="text-white" id="date-crono"></p>
+                            class="flex items-center justify-center text-white absolute bg-zinc-700 rounded-full w-20 h-20">
+                            <p class="text-white font-bold" id="date-crono"></p>
                         </div>
                     </div>
                     <p class="count-question">Question<span class="curent-question"></span>/<span
                             class="total-question"></span></p>
-                    <div class="question-range w-4/5 h-2 mt-14  m-auto rounded bg-blue-800">
+                    <div class="question-range w-4/5 h-2 mt-14  m-auto rounded">
                         <div class="increment-range h-full rounded "></div>
                     </div>
                     <p class="my-Question mt-20 text-xl font-bold">Question</p>
-                    <div
-                        class="w-full mt-20   grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 justify-items-center ">
+                    <div class="content-card w-full mt-20   grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 justify-items-center ">
                         <label
-                            class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-purple-300  rounded-lg shadow-md hover:bg-purple-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                            class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-gray-800   rounded-lg shadow-md hover:bg-indigo-900">
                             <h5 id="Answear-a"
-                                class=" mb-2 text-center text-xl font-bold  text-gray-900 dark:text-white">
+                                class=" mb-2 text-center text-xl font-bold  text-white dark:text-white">
                             </h5>
                             <input class="radio-question" type="radio" name="radio">
-                            <input class="check-question" type="checkbox" name="" id="yes0">
+                            <input class="check-question" type="checkbox" id="yes0">
                         </label>
                         <label
-                            class="answers flex items-center justify-center cursor-pointer my-2 mx-2 max-w-sm p-6 bg-violet-200  rounded-lg shadow-md hover:bg-violet-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 ">
+                            class="answers flex items-center justify-center cursor-pointer my-2 mx-2 max-w-sm p-6 bg-gray-800   rounded-lg shadow-md hover:bg-indigo-900">
                             <h5 id="Answear-b"
-                                class=" mb-2 text-center text-xl font-bold  text-gray-900 dark:text-white">
+                                class=" mb-2 text-center text-xl font-bold  text-white dark:text-white">
                             </h5>
                             <input class="radio-question" type="radio" name="radio">
                             <input class="check-question" type="checkbox" id="yes1">
 
                         </label>
                         <label
-                            class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-blue-200  rounded-lg shadow-md hover:bg-blue-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                            class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-gray-800  rounded-lg shadow-md hover:bg-indigo-900 ">
                             <h5 id="Answear-c"
-                                class=" mb-2 text-center text-xl font-bold  text-gray-900 dark:text-white">
+                                class=" mb-2 text-center text-xl font-bold  text-white dark:text-white">
                             </h5>
                             <input class="radio-question" type="radio" name="radio">
                             <input class="check-question" type="checkbox" id="yes2">
 
                         </label>
                         <label
-                            class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-pink-100  rounded-lg shadow-md hover:bg-pink-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                            <h5 id="Answear-d" class="mb-2 text-xl font-bold text-gray-900 dark:text-white">
+                            class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-gray-800  rounded-lg shadow-md hover:bg-indigo-900">
+                            <h5 id="Answear-d" class="mb-2 text-xl font-bold text-white dark:text-white">
                             </h5>
                             <input class="radio-question" type="radio" name="radio">
                             <input class="check-question" type="checkbox" id="yes3">
                         </label>
                     </div>
                 </div>
-                <div class="scrore">
-                    <p class="score-number">Your Score is: </p>
-                    <p class="score-staut">your level is :</p>
-                    <div class="mt-10 flex justify-center">
-                       <img  src="../images/result-3249597_1920-removebg-preview.png" alt="result">
-                    </div>
-                </div>
+                
             </div>
             <div class="condition-block">
                 <!-- <p class="condition-terms mb-3">Hello</p> -->
+                <div class="scrore">
+                    <p class="score-number">Your Score is: </p>
+                    <p class="score-staut">your level is :</p>
+                    <!-- <div class="mt-10 flex justify-center">
+                        <img src="../images/result-3249597_1920-removebg-preview.png" alt="result">
+                    </div> -->
+                </div>
                 <div class="w-full">
                     <div class="all-answears">
                     </div>
@@ -109,12 +113,11 @@
 
         </div>
         <div class="container-btn">
-            <button class="next-question">Next Question</button>
-            <button class="btn-previous">Previous</button>
-            <button class="btn-next">Next</button>
+            <button class="next-question" disabled>Next Question</button>
+            <button class="btn-next">Let's Go</button>
         </div>
-    </div>
     <!-- <script src="../assets/question.js"></script> -->
+    </main>
     <script src="../assets/script.js"></script>
 </body>
 

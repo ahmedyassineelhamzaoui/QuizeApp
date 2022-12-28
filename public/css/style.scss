@@ -1,3 +1,4 @@
+
 .body-content {
     width: 100%;
     display: flex;
@@ -7,18 +8,18 @@
     .steper-componnet {
         margin-top: 30px;
         .progress-empty {
-            background-color: #C7FFED;
+            background-color: #000a07;
             border-radius: 10px;
             height: 4px;
             width: 60%;
             margin-left: 20%;
             position: relative;
-            top: 20.5px;
+            top: 21px;
             z-index: -1;
             .progress-full {
                 width: 0%;
                 height: 100%;
-                background-color: green;
+                background-color: #ff9900;
                 transition: .5s;
             }
         }
@@ -35,10 +36,11 @@
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
-                border: 2px solid #015958;
-                background-color: #C7FFED;
+                border: 2px solid #ff9900;
+                background-color: black;
                 font-weight: bold;
                 display: flex;
+                color:#ff9900;
                 justify-content: center;
                 align-items: center;
             }
@@ -48,9 +50,10 @@
 
     .container-btn {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        width:66%;
+        margin-left: 17%;
          margin-bottom: 20px;
-        // border: 2px solid black;
         %btn {
             border-radius: 5px;
             width: 150px;
@@ -61,15 +64,19 @@
 
         .next-question {
             @extend %btn;
-            background-color: pink;
+            background-color:#232f3e;
+            color:#ff9900;
+            &:hover{
+                background-color:rgb(9, 9, 111);
+            }
         }
 
         .btn-next {
             @extend %btn;
-            background-color: #008F8C;
-
+            background-color:#232f3e;
+            color:#ff9900;
             &:hover {
-                background-color: #057674;
+                background-color:rgb(9, 9, 111);
             }
         }
 
@@ -118,13 +125,13 @@
                 text-align: start;
                 margin-left: 10%;
                 .green-answear{
-                    color:#C2BB00;
+                    color:#159A9C;
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     // font-size: 20px;
                     font-weight: bold;
                 }
                 .red-answear{
-                    color:#E1523D;
+                   color:#F23030;
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     // font-size: 20px;
                     font-weight: bold;
@@ -136,8 +143,9 @@
             }
             .scrore{
                 display: flex ;
+                flex-direction: column;
                 justify-content: center;
-                display: none;
+                margin-bottom: 20px;
                 .score-number{
                     font-weight: bold;
                 }
@@ -148,17 +156,23 @@
             .container{
                 display: block;
                 align-items: center;
+                .question-range{
+                    background-color:#232f3e ;
+                }
                 .increment-range{
-                    background: 
+                    background-color:#ff9900; 
                     /* On "top" */
-                    repeating-linear-gradient(
-                        45deg,
-                        #ffff00,
-                        #ebeb05 10px,
-                        #dada00 10px,
-                        #ccc900 20px
-                    )
+                    // repeating-linear-gradient(
+                    //     45deg,
+                    //     #ffff00,
+                    //     #ebeb05 10px,
+                    //     #dada00 10px,
+                    //     #ccc900 20px
+                    // )
                     
+                }
+                .content-card{
+                    color:#232f3e;
                 }
 
             }
@@ -187,8 +201,17 @@
             }
 
             .condition-terms {
+                width:68%;
+                margin-left: 16%;
                 margin-bottom: 40px;
-                color: gray;
+                padding-top: 10px;
+                color:#232f3e;
+                // background:radial-gradient(white, gray);
+                //  background:linear-gradient(#76b2fe, #b69efe);
+                text-align: left;
+                i{
+                    accent-color: red;
+                }
             }
         }
 
