@@ -16,7 +16,7 @@
         "Réponse4"      :"Amazon AppStream 2.0",
         "RightEsponse"  :"AWS Database Migration Service (AWS DMS)",
         "explanation"   :"AWS DMS helps users migrate databases to AWS quickly and securely. The source database remains fully operational during the migration, minimizing downtime to applications that rely on the database. AWS DMS can migrate data to and from most widely used commercial and open-source databases"
-        
+
     }
     ,
     {

@@ -7,7 +7,7 @@ let btnNext = document.querySelector(".btn-next");
 let nextQuestion = document.querySelector(".next-question");
 // nextQuestion.disabled=true;
 nextQuestion.style.visibility = "hidden";
-let  =document.querySelector(".body-content");
+// let  =document.querySelector(".body-content");
 
 let cercle = document.querySelectorAll(".cercle");
 let progressEmpty = document.querySelector(".progress-empty");
@@ -53,8 +53,8 @@ lightMode.onclick=()=>{
     darkMode.style.display="block";
     lightMode.style.display="none";
     color="white";
-    link.removeAttribute('href','../css/style.css')
-    link.setAttribute('href','../css/dark.css')
+    link.removeAttribute('href','./public/css/style.css')
+    link.setAttribute('href','./public/css/dark.css')
     cercle.forEach(cercle =>{
         cercle.style.background="white";
     })
@@ -66,8 +66,8 @@ darkMode.onclick=()=>{
     cercle.style.background="black";
    })
    color="black";
-   link.setAttribute('href','../css/style.css')
-   link.removeAttribute('href','../css/dark.css')
+   link.setAttribute('href','./public/css/style.css')
+   link.removeAttribute('href','./public/css/dark.css')
 }
 btnNext.onclick = () => {
     if (compt < 2) {
@@ -124,7 +124,7 @@ function Getdata() {
         if (this.readyState === 4 && this.status === 200) {
             quizeObject = JSON.parse(this.responseText);
             quizeObject.sort(function () { return Math.random() - 0.5; });
-            table= quizeObject;
+            table = quizeObject;
             let numberOfquestion = quizeObject.length;
             showdata(quizeObject[index], numberOfquestion);
             Countdown(30, numberOfquestion);
@@ -199,7 +199,7 @@ function Getdata() {
 
 
     }
-    mydata.open('GET', "../assets/data.json", true);
+    mydata.open('GET', "../public/assets/data.json", true);
     mydata.send();
 }
 
