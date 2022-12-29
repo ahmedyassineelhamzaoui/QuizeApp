@@ -1,4 +1,6 @@
-
+body{
+    background-color: #232f3e;
+}
 .body-content {
     width: 100%;
     display: flex;
@@ -24,9 +26,10 @@
                 top: 50%;
                 transform: translate(-50%,-50%);
             }
+            
             &:hover{
                color:#ff9900;
-               background-color: #232f3e;
+               background-color: #ffffff;
                cursor:pointer;
             }
            }
@@ -35,7 +38,7 @@
     .steper-componnet {
         margin-top: 30px;
         .progress-empty {
-            background-color: #000a07;
+            background-color: #ffffff;
             border-radius: 10px;
             height: 4px;
             width: 60%;
@@ -63,7 +66,7 @@
                 height: 40px;
                 border-radius: 50%;
                 border: 2px solid #ff9900;
-                background-color: black;
+                background-color: rgb(255, 255, 255);
                 font-weight: bold;
                 display: flex;
                 color:#ff9900;
@@ -90,7 +93,7 @@
 
         .next-question {
             @extend %btn;
-            background-color:#232f3e;
+            background-color:#f9f9f9;
             color:#ff9900;
             &:hover{
                 background-color:rgb(9, 9, 111);
@@ -99,7 +102,7 @@
 
         .btn-next {
             @extend %btn;
-            background-color:#232f3e;
+            background-color:#fefefe;
             color:#ff9900;
             &:hover {
                 background-color:rgb(9, 9, 111);
@@ -172,6 +175,7 @@
                 flex-direction: column;
                 justify-content: center;
                 margin-bottom: 20px;
+                color:whitesmoke;
                 .score-number{
                     font-weight: bold;
                 }
@@ -183,7 +187,7 @@
                 display: block;
                 align-items: center;
                 .question-range{
-                    background-color:#232f3e ;
+                    background-color:#ffffff ;
                 }
                 .increment-range{
                     background-color:#ff9900; 
@@ -198,18 +202,18 @@
                     
                 }
                 .content-card{
-                    color: whitesmoke;
+                    color:#232f3e ;
                 }
                 .my-Question{
-                   color:black;
-                }
+                    color:white;
+                 }
 
             }
             .answers {
                 width: 300px;
                 height: 150px;
                 position: relative;
-                background-color: #232f3e ;
+                background-color: #ffffff;
                 .radio-question {
                     position: absolute;
                     accent-color: blue;

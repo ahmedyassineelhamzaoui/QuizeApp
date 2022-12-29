@@ -25,13 +25,50 @@ let checkanswer = [];
 let RightAnswers = [];
 let Rightexplanation = [];
 
-playAudio=document.querySelector(".play-audio");
-audioSource=document.querySelector("audio-source");
+playAudio=document.querySelector("#play-audio");
+audioSource=document.querySelector("#audio-Source");
+pauseAudio=document.querySelector("#pause-audio");
+pauseAudio.style.display="none";
+playAudio.style.display="none";
+let click="";
 playAudio.onclick=()=>{
-   
+    pauseAudio.style.display="block";
+    playAudio.style.display="none"
+        audioSource.pause();
+        click="clicked";
 }
-
-
+pauseAudio.onclick=()=>{
+    pauseAudio.style.display="none";
+    playAudio.style.display="block"
+    audioSource.play();
+    
+}
+let color="black";
+let head=document.querySelector("head");
+let link=document.querySelector('link');
+let lightMode=document.querySelector("#light-mode");
+let darkMode=document.querySelector("#dark-mode");
+darkMode.style.display="none";
+lightMode.onclick=()=>{
+    darkMode.style.display="block";
+    lightMode.style.display="none";
+    color="white";
+    link.removeAttribute('href','../css/style.css')
+    link.setAttribute('href','../css/dark.css')
+    cercle.forEach(cercle =>{
+        cercle.style.background="white";
+    })
+}
+darkMode.onclick=()=>{
+   lightMode.style.display="block";
+   darkMode.style.display="none";
+   cercle.forEach(cercle =>{
+    cercle.style.background="black";
+   })
+   color="black";
+   link.setAttribute('href','../css/style.css')
+   link.removeAttribute('href','../css/dark.css')
+}
 btnNext.onclick = () => {
     if (compt < 2) {
         compt++;
@@ -51,15 +88,15 @@ btnNext.onclick = () => {
         conditionBlock[compt].style.display = "block";
         conditionBlock[compt - 1].style.display = "none";
         // end
-        cercle[compt].style.background = "black";
+        cercle[compt].style.background = color;
         cercle[compt].style.color = "#ff9900";
-        cercle[compt - 1].style.background = "black";
+        cercle[compt - 1].style.background = color;
         progressFull.style.width = `${compt * 5 * 10}%`;
     }
 }
 
-
-
+let contentAudio=document.querySelector(".audio-content");
+contentAudio.style.display="none";
 // the progress bar
 let incrementRange = document.querySelector(".increment-range");
 let radioQuestion = document.querySelectorAll(".radio-question");
@@ -71,10 +108,18 @@ let scoreStaut = document.querySelector(".score-staut");
 let allAnswears = document.querySelector(".all-answears");
 let index = 0;
 
+// dark and light mode
+
+// dark and light mode
+
+
+
 function Getdata() {
+    contentAudio.style.display="block";
+    audioSource.play();
+    playAudio.style.display="block";
     var mydata = new XMLHttpRequest();
     // nextQuestion.disabled=true;
-
     mydata.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             quizeObject = JSON.parse(this.responseText);
@@ -92,6 +137,10 @@ function Getdata() {
                 })
             })
             nextQuestion.onclick = () => {
+                audioSource.currentTime = 0;
+                if(click==''){
+                    audioSource.play();
+                }
                 nextQuestion.disabled=true;
                 if (index == 1 || index == 6 || index == 8) {
                     for (let j = 0; j < 4; j++) {
@@ -118,6 +167,7 @@ function Getdata() {
                     }
                 }
                 if (index == (numberOfquestion - 1)) {
+                    audioSource.pause()
                     btnNext.style.visibility = "visible";
                     btnNext.innerHTML = "Show Results";
                     nextQuestion.style.visibility = "hidden";
@@ -226,6 +276,7 @@ function Countdown(timeing, allquestions) {
                     btnNext.style.visibility = "visible";
                     btnNext.innerHTML = "Show Results";
                 } else {
+                    nextQuestion.disabled=false;
                     nextQuestion.click();
                 }
             }

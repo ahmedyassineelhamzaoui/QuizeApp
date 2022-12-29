@@ -14,13 +14,17 @@
 
 <body>
     <div class="body-content">
-        <audio  id="audioSource" src="../images/audio.mp3"></audio>
-        <i class="fa fa-play" aria-hidden="true" id="play-audio"></i>
-        <style>
-             #myAudio {
-                display: none;
-            }
-        </style>
+        <div class="top-content">
+        <audio id="audio-Source" src="../images/audio.mp3"></audio>
+        <div class="audio-content">
+            <i class="fa-solid fa-music text-xl" id="play-audio"></i>
+            <i id="pause-audio" class="fa-solid fa-volume-xmark text-xl"></i>
+        </div>
+        <div class="application-mode flex justify-center items-center">
+            <i class="fa-sharp fa-solid fa-circle-half-stroke text-xl" id="light-mode"></i>
+            <i class="fa-solid fa-moon" id="dark-mode"></i>
+        </div>
+        </div>
         <div class="steper-componnet">
             <div class="progress-empty">
                 <div class="progress-full"></div>
@@ -32,10 +36,9 @@
             </div>
         </div>
         <div class="quiz-logo">
-            <img id="image" src="../images/download-removebg-preview.png" alt="">
+            <img id="image" src="../images/download.jpg" alt="">
         </div>
         <div class="content flex justify-center items-center ">
-
             <div class="condition-block isuss">
                 <div class="condition-terms w-full mb-4 p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-70 h-42">
                     <h3 class="font-mono flex items-center"><i class="fa-solid fa-clipboard-check text-sky-900 mb-2 mr-2"></i><span class="mb-2"> The test consists of 10 questions, each answer earning one point</span></h3>
@@ -62,7 +65,7 @@
                         <label
                             class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-gray-800   rounded-lg shadow-md hover:bg-indigo-900">
                             <h5 id="Answear-a"
-                                class=" mb-2 text-center text-xl font-bold  text-white dark:text-white">
+                                class=" mb-2 text-center text-xl font-bold  dark:text-white">
                             </h5>
                             <input class="radio-question" type="radio" name="radio">
                             <input class="check-question" type="checkbox" id="yes0">
@@ -70,7 +73,7 @@
                         <label
                             class="answers flex items-center justify-center cursor-pointer my-2 mx-2 max-w-sm p-6 bg-gray-800   rounded-lg shadow-md hover:bg-indigo-900">
                             <h5 id="Answear-b"
-                                class=" mb-2 text-center text-xl font-bold  text-white dark:text-white">
+                                class=" mb-2 text-center text-xl font-bold   dark:text-white">
                             </h5>
                             <input class="radio-question" type="radio" name="radio">
                             <input class="check-question" type="checkbox" id="yes1">
@@ -79,7 +82,7 @@
                         <label
                             class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-gray-800  rounded-lg shadow-md hover:bg-indigo-900 ">
                             <h5 id="Answear-c"
-                                class=" mb-2 text-center text-xl font-bold  text-white dark:text-white">
+                                class=" mb-2 text-center text-xl font-bold  dark:text-white">
                             </h5>
                             <input class="radio-question" type="radio" name="radio">
                             <input class="check-question" type="checkbox" id="yes2">
@@ -87,7 +90,7 @@
                         </label>
                         <label
                             class="answers flex items-center justify-center cursor-pointer  my-2  mx-2 max-w-sm p-6 bg-gray-800  rounded-lg shadow-md hover:bg-indigo-900">
-                            <h5 id="Answear-d" class="mb-2 text-xl font-bold text-white dark:text-white">
+                            <h5 id="Answear-d" class="mb-2 text-xl font-bold  dark:text-white">
                             </h5>
                             <input class="radio-question" type="radio" name="radio">
                             <input class="check-question" type="checkbox" id="yes3">
@@ -116,7 +119,6 @@
             <button class="next-question" disabled>Next Question</button>
             <button class="btn-next">Let's Go</button>
         </div>
-    <!-- <script src="../assets/question.js"></script> -->
     </main>
     <script src="../assets/script.js"></script>
 </body>

@@ -1,3 +1,7 @@
+body {
+  background-color: #232f3e;
+}
+
 .body-content {
   width: 100%;
   display: flex;
@@ -28,14 +32,14 @@
 }
 .body-content .top-content .audio-content:hover, .body-content .top-content .application-mode:hover {
   color: #ff9900;
-  background-color: #232f3e;
+  background-color: #ffffff;
   cursor: pointer;
 }
 .body-content .steper-componnet {
   margin-top: 30px;
 }
 .body-content .steper-componnet .progress-empty {
-  background-color: #000a07;
+  background-color: #ffffff;
   border-radius: 10px;
   height: 4px;
   width: 60%;
@@ -63,7 +67,7 @@
   height: 40px;
   border-radius: 50%;
   border: 2px solid #ff9900;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   font-weight: bold;
   display: flex;
   color: #ff9900;
@@ -85,14 +89,14 @@
   text-align: center;
 }
 .body-content .container-btn .next-question {
-  background-color: #232f3e;
+  background-color: #f9f9f9;
   color: #ff9900;
 }
 .body-content .container-btn .next-question:hover {
   background-color: rgb(9, 9, 111);
 }
 .body-content .container-btn .btn-next {
-  background-color: #232f3e;
+  background-color: #fefefe;
   color: #ff9900;
 }
 .body-content .container-btn .btn-next:hover {
@@ -155,6 +159,7 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 20px;
+  color: whitesmoke;
 }
 .body-content .content .condition-block .scrore .score-number {
   font-weight: bold;
@@ -167,23 +172,23 @@
   align-items: center;
 }
 .body-content .content .condition-block .container .question-range {
-  background-color: #232f3e;
+  background-color: #ffffff;
 }
 .body-content .content .condition-block .container .increment-range {
   background-color: #ff9900;
   /* On "top" */
 }
 .body-content .content .condition-block .container .content-card {
-  color: whitesmoke;
+  color: #232f3e;
 }
 .body-content .content .condition-block .container .my-Question {
-  color: black;
+  color: white;
 }
 .body-content .content .condition-block .answers {
   width: 300px;
   height: 150px;
   position: relative;
-  background-color: #232f3e;
+  background-color: #ffffff;
 }
 .body-content .content .condition-block .answers .radio-question {
   position: absolute;
@@ -214,4 +219,4 @@
 }
 .body-content .content .active {
   display: block;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=dark.css.map */
